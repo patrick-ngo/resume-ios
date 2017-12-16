@@ -47,6 +47,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tv.dataSource = self
         
         //cell registration
+        tv.register(SingleResumeHeaderCell.self, forCellReuseIdentifier: String(describing: SingleResumeHeaderCell.self))
         tv.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         
         return tv
@@ -114,19 +115,15 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section {
-        case Section.header.rawValue:
-            return 1
-        
-        case Section.about.rawValue:
+        case Section.header.rawValue,
+             Section.about.rawValue,
+             Section.contact.rawValue:
             return 1
         
         case Section.experience.rawValue:
             return 1
             
         case Section.education.rawValue:
-            return 1
-            
-        case Section.about.rawValue:
             return 1
             
         default:
@@ -137,32 +134,24 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))
-        
-        var name = ""
-        
         switch indexPath.section {
         case Section.header.rawValue:
-            name = Section.header.name()
             
-        case Section.about.rawValue:
-            name = Section.about.name()
+            let headerCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeHeaderCell.self)) as! SingleResumeHeaderCell
+            return headerCell
             
-        case Section.experience.rawValue:
-            name = Section.experience.name()
+        case Section.about.rawValue,
+             Section.experience.rawValue,
+             Section.education.rawValue,
+             Section.contact.rawValue:
             
-        case Section.education.rawValue:
-            name = Section.education.name()
-            
-        case Section.about.rawValue:
-            name = Section.about.name()
+            let cell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))
+            cell?.textLabel?.text = "cell"
+            return cell!
             
         default:
-            break
+            return UITableViewCell()
         }
-        cell?.textLabel?.text = name
-        
-        return cell!
     }
     
     
@@ -170,7 +159,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

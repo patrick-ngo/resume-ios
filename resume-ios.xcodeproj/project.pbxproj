@@ -10,6 +10,7 @@
 		52574E5A36585354729531C2 /* Pods_resume_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E12E9C06134734AE3E21DE /* Pods_resume_ios.framework */; };
 		8A79E766B91BB60F8B083592 /* Pods_resume_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920F6CDB7C7B266F58BD17AB /* Pods_resume_iosTests.framework */; };
 		B91DA0D71FE5873C0067806E /* SingleResumeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0D61FE5873C0067806E /* SingleResumeVC.swift */; };
+		B91DA0DA1FE58D840067806E /* SingleResumeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0D91FE58D840067806E /* SingleResumeHeaderCell.swift */; };
 		B98F5FEB1FE57F2F003F37B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F5FEA1FE57F2F003F37B4 /* AppDelegate.swift */; };
 		B98F5FED1FE57F2F003F37B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F5FEC1FE57F2F003F37B4 /* ViewController.swift */; };
 		B98F5FF21FE57F2F003F37B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B98F5FF11FE57F2F003F37B4 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		920F6CDB7C7B266F58BD17AB /* Pods_resume_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_resume_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C7DD6766A2483B35F6510D /* Pods-resume-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-resume-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-resume-ios/Pods-resume-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B91DA0D61FE5873C0067806E /* SingleResumeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleResumeVC.swift; sourceTree = "<group>"; };
+		B91DA0D91FE58D840067806E /* SingleResumeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleResumeHeaderCell.swift; sourceTree = "<group>"; };
 		B98F5FE71FE57F2F003F37B4 /* resume-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "resume-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98F5FEA1FE57F2F003F37B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B98F5FEC1FE57F2F003F37B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		B91DA0D81FE587800067806E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B91DA0D91FE58D840067806E /* SingleResumeHeaderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				B98F5FED1FE57F2F003F37B4 /* ViewController.swift in Sources */,
 				B91DA0D71FE5873C0067806E /* SingleResumeVC.swift in Sources */,
 				B98F5FEB1FE57F2F003F37B4 /* AppDelegate.swift in Sources */,
+				B91DA0DA1FE58D840067806E /* SingleResumeHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
