@@ -14,6 +14,7 @@
 		B91DA0DC1FE599220067806E /* SingleResumeAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0DB1FE599220067806E /* SingleResumeAboutCell.swift */; };
 		B91DA0DF1FE59E430067806E /* ResumeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0DE1FE59E430067806E /* ResumeModel.swift */; };
 		B91DA0E11FE5A08D0067806E /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0E01FE5A08D0067806E /* JobModel.swift */; };
+		B91DA0E41FE5A23A0067806E /* ResumesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0E31FE5A23A0067806E /* ResumesAPI.swift */; };
 		B98F5FEB1FE57F2F003F37B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F5FEA1FE57F2F003F37B4 /* AppDelegate.swift */; };
 		B98F5FED1FE57F2F003F37B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F5FEC1FE57F2F003F37B4 /* ViewController.swift */; };
 		B98F5FF21FE57F2F003F37B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B98F5FF11FE57F2F003F37B4 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		B91DA0DB1FE599220067806E /* SingleResumeAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleResumeAboutCell.swift; sourceTree = "<group>"; };
 		B91DA0DE1FE59E430067806E /* ResumeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeModel.swift; sourceTree = "<group>"; };
 		B91DA0E01FE5A08D0067806E /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
+		B91DA0E31FE5A23A0067806E /* ResumesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesAPI.swift; sourceTree = "<group>"; };
 		B98F5FE71FE57F2F003F37B4 /* resume-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "resume-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98F5FEA1FE57F2F003F37B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B98F5FEC1FE57F2F003F37B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B91DA0E21FE5A2210067806E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B91DA0E31FE5A23A0067806E /* ResumesAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		B98F5FDE1FE57F2F003F37B4 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 		B98F5FE91FE57F2F003F37B4 /* resume-ios */ = {
 			isa = PBXGroup;
 			children = (
+				B91DA0E21FE5A2210067806E /* Network */,
 				B91DA0DD1FE59E300067806E /* Models */,
 				B91DA0D51FE5870E0067806E /* Single Resume */,
 				B91DA0D41FE586FA0067806E /* Support Files */,
@@ -506,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B91DA0DF1FE59E430067806E /* ResumeModel.swift in Sources */,
+				B91DA0E41FE5A23A0067806E /* ResumesAPI.swift in Sources */,
 				B98F5FED1FE57F2F003F37B4 /* ViewController.swift in Sources */,
 				B91DA0D71FE5873C0067806E /* SingleResumeVC.swift in Sources */,
 				B91DA0DC1FE599220067806E /* SingleResumeAboutCell.swift in Sources */,
