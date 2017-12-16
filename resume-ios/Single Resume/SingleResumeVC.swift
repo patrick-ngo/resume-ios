@@ -48,6 +48,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //cell registration
         tv.register(SingleResumeHeaderCell.self, forCellReuseIdentifier: String(describing: SingleResumeHeaderCell.self))
+        tv.register(SingleResumeAboutCell.self, forCellReuseIdentifier: String(describing: SingleResumeAboutCell.self))
         tv.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         
         return tv
@@ -140,8 +141,12 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             let headerCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeHeaderCell.self)) as! SingleResumeHeaderCell
             return headerCell
             
-        case Section.about.rawValue,
-             Section.experience.rawValue,
+        case Section.about.rawValue:
+             
+             let aboutCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeAboutCell.self)) as! SingleResumeAboutCell
+             return aboutCell
+            
+        case Section.experience.rawValue,
              Section.education.rawValue,
              Section.contact.rawValue:
             
