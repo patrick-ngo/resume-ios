@@ -180,6 +180,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         case Section.about.rawValue:
              
              let aboutCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeAboutCell.self)) as! SingleResumeAboutCell
+             aboutCell.resume = self.resume
              return aboutCell
             
         case Section.experience.rawValue,

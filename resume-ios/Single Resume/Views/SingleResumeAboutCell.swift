@@ -11,12 +11,24 @@ import UIKit
 
 class SingleResumeAboutCell : UITableViewCell {
     
+    var resume: ResumeModel? = nil {
+        didSet{
+            if let resume = self.resume {
+
+                if let summary = resume.summary {
+                    self.descriptionLabel.text = summary
+                }
+            }
+        }
+    }
+    
+    
     let descriptionLabel : UILabel = {
         let lbl = UILabel()
         
-        lbl.font = UIFont.systemFont(ofSize: 13)
+        lbl.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.light)
         lbl.textAlignment = .left
-        lbl.numberOfLines = 4
+        lbl.numberOfLines = 0
         lbl.lineBreakMode = .byTruncatingTail
         lbl.text = "Description"
         
@@ -26,10 +38,10 @@ class SingleResumeAboutCell : UITableViewCell {
     
     lazy var titleLabel : UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 13)
+        lbl.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.semibold)
         lbl.textAlignment = .left
         lbl.numberOfLines = 1
-        lbl.text = "Title"
+        lbl.text = "About"
         return lbl
     }()
     
