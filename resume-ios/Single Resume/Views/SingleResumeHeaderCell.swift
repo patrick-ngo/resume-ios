@@ -69,13 +69,13 @@ class SingleResumeHeaderCell : UITableViewCell {
     
     let containerView : UIView = {
         let v = UIView()
-        v.backgroundColor = .gray
+        v.backgroundColor = .white
         return v
     }()
     
     lazy var nameLabel : UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 15)
+        lbl.font = UIFont.systemFont(ofSize: 17)
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
@@ -85,7 +85,7 @@ class SingleResumeHeaderCell : UITableViewCell {
     
     lazy var titleLabel : UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.medium)
+        lbl.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium)
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
@@ -95,7 +95,7 @@ class SingleResumeHeaderCell : UITableViewCell {
     
     lazy var educationLabel : UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 11)
+        lbl.font = UIFont.systemFont(ofSize: 12)
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
@@ -105,7 +105,7 @@ class SingleResumeHeaderCell : UITableViewCell {
     
     lazy var locationLabel : UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 11)
+        lbl.font = UIFont.systemFont(ofSize: 12)
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
@@ -122,6 +122,7 @@ class SingleResumeHeaderCell : UITableViewCell {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         
         self.selectionStyle = .none
+        self.contentView.backgroundColor = .gray
         
         self.contentView.addSubview(self.bannerImageView)
         self.contentView.addSubview(self.containerView)
@@ -134,26 +135,26 @@ class SingleResumeHeaderCell : UITableViewCell {
         
         self.bannerImageView.snp.makeConstraints { (make) in
             make.left.right.equalTo(0)
-            make.height.equalTo(80)
+            make.height.equalTo(100)
             make.top.equalTo(0)
-            make.bottom.equalTo(self.containerView.snp.top)
+//            make.bottom.equalTo(self.containerView.snp.top)
         }
         
         self.containerView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.bannerImageView.snp.bottom)
-            make.left.right.equalTo(0)
-            make.height.equalTo(150)
-            make.bottom.equalTo(0)
+            make.top.equalTo(self.bannerImageView.snp.bottom).offset(-5)
+            make.left.equalTo(8)
+            make.right.equalTo(-8)
+            make.bottom.equalTo(-10)
         }
         
         self.avatarImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(0).offset(20)
+            make.top.equalTo(0).offset(30)
             make.height.width.equalTo(100)
             make.centerX.equalTo(self.contentView.snp.centerX)
         }
         
         self.nameLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.avatarImageView.snp.bottom).offset(15)
+            make.top.equalTo(self.avatarImageView.snp.bottom).offset(5)
             make.centerX.equalTo(self.contentView.snp.centerX)
             make.height.equalTo(30)
         }
@@ -174,7 +175,7 @@ class SingleResumeHeaderCell : UITableViewCell {
             make.top.equalTo(self.educationLabel.snp.bottom).offset(0)
             make.centerX.equalTo(self.contentView.snp.centerX)
             make.height.equalTo(15)
-            make.bottom.equalTo(0).offset(-15)
+            make.bottom.equalTo(0).offset(-10)
         }
     }
 }
