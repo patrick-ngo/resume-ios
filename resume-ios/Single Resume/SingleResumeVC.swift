@@ -13,6 +13,8 @@ import SnapKit
 
 class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var isLoading: Bool = false
+    var resume: ResumeModel?
     
     enum Section : Int {
         case header = 0
@@ -100,7 +102,40 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func loadData(reloadAll:Bool = false) {
-        //TODO: load from api
+        guard !self.isLoading else {
+            return
+        }
+        
+        //signal start loading
+        self.isLoading = true
+        
+        
+        ResumesAPI.getResume(by: 1) { (result, error) in
+            if let result = result, error == nil {
+                
+                do {
+                    let resumeResponse = try JSONDecoder().decode(ResumeModel.self, from: result)
+                    
+                    self.resume = resumeResponse
+                    
+                    //reload table
+                    self.tableView.reloadData()
+                }
+                catch {
+                    print("Error serializing json:", error)
+                }
+            }
+            
+            //signal end loading
+            self.isLoading = false
+            
+            //stop refreshing
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+        }
+        
+
     }
     
     @objc func reloadData(refreshControl:UIRefreshControl) {
@@ -139,6 +174,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         case Section.header.rawValue:
             
             let headerCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeHeaderCell.self)) as! SingleResumeHeaderCell
+            headerCell.resume = self.resume
             return headerCell
             
         case Section.about.rawValue:

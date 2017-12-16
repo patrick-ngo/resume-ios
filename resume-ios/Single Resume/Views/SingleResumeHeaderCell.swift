@@ -8,8 +8,42 @@
 
 import Foundation
 import SnapKit
+import SDWebImage
 
 class SingleResumeHeaderCell : UITableViewCell {
+    
+    
+    var resume: ResumeModel? = nil {
+        didSet{
+            if let resume = self.resume {
+                
+                if let bannerUrl = resume.bannerImage {
+                    self.bannerImageView.sd_setImage(with: URL(string: bannerUrl))
+                }
+                
+                if let profileUrl = resume.profileImage {
+                    self.avatarImageView.sd_setImage(with: URL(string: profileUrl))
+                }
+                
+                if let name = resume.name {
+                    self.nameLabel.text = name
+                }
+                
+                if let title = resume.title {
+                    self.titleLabel.text = title
+                }
+                
+                if let education = resume.education {
+                    self.educationLabel.text = education
+                }
+                
+                if let location = resume.location {
+                    self.locationLabel.text = location
+                }
+            }
+            
+        }
+    }
 
     
     let bannerImageView : UIImageView = {
@@ -27,6 +61,9 @@ class SingleResumeHeaderCell : UITableViewCell {
         iv.layer.cornerRadius = 50 //size 80
         iv.backgroundColor = .green
         
+        iv.layer.borderColor = UIColor.white.cgColor
+        iv.layer.borderWidth = 3
+        
         return iv
     }()
     
@@ -38,7 +75,7 @@ class SingleResumeHeaderCell : UITableViewCell {
     
     lazy var nameLabel : UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 13)
+        lbl.font = UIFont.systemFont(ofSize: 15)
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
@@ -48,7 +85,7 @@ class SingleResumeHeaderCell : UITableViewCell {
     
     lazy var titleLabel : UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 12)
+        lbl.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.medium)
         lbl.textColor = .black
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
