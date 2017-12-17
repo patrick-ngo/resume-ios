@@ -11,22 +11,27 @@ import Foundation
 //Resume
 struct ResumeModel: Decodable {
     let id: Int?
+    
+    //basic info
     let name: String?
-    
-    let profileImage: String?
-    let bannerImage: String?
-    
     let title: String?
     let education: String?
     let location: String?
     let summary: String?
     
-    let email: String?
-    let contactNumber: String?
-    let githubUrl: String?
-    let linkedInUrl: String?
-    let facebookUrl: String?
+    //images
+    let profileImage: String?
+    let bannerImage: String?
     
+    //contact info
+    let contactSummary: String?
+    let contactNumber: String?
+    let email: String?
+    
+    //jobs
     let jobs: [JobModel]?
+    
+    //educations
+    let educations: [EducationModel]?
 }
 

@@ -1,5 +1,5 @@
 //
-//  JobModel.swift
+//  EducationModel.swift
 //  resume-ios
 //
 //  Created by Patrick Ngo on 2017-12-17.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-//Job
-struct JobModel: Decodable {
+//Education
+struct EducationModel: Decodable {
     let id: Int?
     
     //basic info
     let title: String?
-    let company: String?
+    let school: String?
     let start: String?
     let end:String?
     let period:String?
@@ -28,4 +28,3 @@ struct JobModel: Decodable {
     //id of resume if belongs to
     let resumeId: Int?
 }
-
