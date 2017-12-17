@@ -21,6 +21,7 @@ extension UIColor {
         static let purple = UIColor(hex: 0x8D6BAB)
         static let blue = UIColor(hex: 0x517EC7)
         static let lightBlue = UIColor(hex: 0x2C94DB)
+        static let lightGrey = UIColor(hex: 0xBBBBBB)
     }
     
     struct Text {

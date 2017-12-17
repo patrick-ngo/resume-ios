@@ -52,6 +52,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         //cell registration
         tv.register(SingleResumeHeaderCell.self, forCellReuseIdentifier: String(describing: SingleResumeHeaderCell.self))
         tv.register(SingleResumeAboutCell.self, forCellReuseIdentifier: String(describing: SingleResumeAboutCell.self))
+        tv.register(SingleResumeContactCell.self, forCellReuseIdentifier: String(describing: SingleResumeContactCell.self))
         tv.register(SingleResumeJobCellCell.self, forCellReuseIdentifier: String(describing: SingleResumeJobCellCell.self))
         
         tv.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
@@ -169,7 +170,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             return 0
             
         case Section.education.rawValue:
-            return 1
+            return 0
             
         default:
             return 0
@@ -191,6 +192,11 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
              let aboutCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeAboutCell.self)) as! SingleResumeAboutCell
              aboutCell.resume = self.resume
              return aboutCell
+            
+        case Section.contact.rawValue:
+            
+            let contactCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeContactCell.self)) as! SingleResumeContactCell
+            return contactCell
         
         case Section.experience.rawValue:
             
