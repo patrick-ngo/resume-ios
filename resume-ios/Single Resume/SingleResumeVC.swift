@@ -52,6 +52,8 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         //cell registration
         tv.register(SingleResumeHeaderCell.self, forCellReuseIdentifier: String(describing: SingleResumeHeaderCell.self))
         tv.register(SingleResumeAboutCell.self, forCellReuseIdentifier: String(describing: SingleResumeAboutCell.self))
+        tv.register(SingleResumeJobCellCell.self, forCellReuseIdentifier: String(describing: SingleResumeJobCellCell.self))
+        
         tv.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         
         tv.register(SingleResumeSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: String(describing: SingleResumeSectionHeaderView.self))
@@ -161,7 +163,10 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             return 1
         
         case Section.experience.rawValue:
-            return 1
+            if let jobs = self.resume?.jobs {
+                return jobs.count
+            }
+            return 0
             
         case Section.education.rawValue:
             return 1
@@ -186,9 +191,17 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
              let aboutCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeAboutCell.self)) as! SingleResumeAboutCell
              aboutCell.resume = self.resume
              return aboutCell
+        
+        case Section.experience.rawValue:
             
-        case Section.experience.rawValue,
-             Section.education.rawValue,
+            let jobCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeJobCellCell.self)) as! SingleResumeJobCellCell
+            
+            if let jobs = self.resume?.jobs {
+                jobCell.job = jobs[indexPath.row]
+            }
+            return jobCell
+            
+        case Section.education.rawValue,
              Section.contact.rawValue:
             
             let cell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))
@@ -228,7 +241,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case Section.experience.rawValue:
-            return 34
+            return 25
             
         default:
             return 0
