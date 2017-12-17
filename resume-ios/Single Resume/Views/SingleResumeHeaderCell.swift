@@ -122,7 +122,7 @@ class SingleResumeHeaderCell : UITableViewCell {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         
         self.selectionStyle = .none
-        self.contentView.backgroundColor = .gray
+        self.contentView.backgroundColor = UIColor.Background.grey
         
         self.contentView.addSubview(self.bannerImageView)
         self.contentView.addSubview(self.containerView)
