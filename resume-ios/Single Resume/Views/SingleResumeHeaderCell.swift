@@ -70,13 +70,14 @@ class SingleResumeHeaderCell : UITableViewCell {
     let containerView : UIView = {
         let v = UIView()
         v.backgroundColor = .white
+        v.layer.cornerRadius = 2
         return v
     }()
     
     lazy var nameLabel : UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 17)
-        lbl.textColor = .black
+        lbl.textColor = UIColor.Text.darkGrey
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
         lbl.text = "Name"
@@ -86,7 +87,7 @@ class SingleResumeHeaderCell : UITableViewCell {
     lazy var titleLabel : UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.medium)
-        lbl.textColor = .black
+        lbl.textColor = UIColor.Text.darkGrey
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
         lbl.text = "Title"
@@ -96,7 +97,7 @@ class SingleResumeHeaderCell : UITableViewCell {
     lazy var educationLabel : UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 12)
-        lbl.textColor = .black
+        lbl.textColor = UIColor.Text.darkGrey
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
         lbl.text = "Education"
@@ -106,7 +107,7 @@ class SingleResumeHeaderCell : UITableViewCell {
     lazy var locationLabel : UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 12)
-        lbl.textColor = .black
+        lbl.textColor = UIColor.Text.darkGrey
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
         lbl.text = "Location"
@@ -122,7 +123,7 @@ class SingleResumeHeaderCell : UITableViewCell {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         
         self.selectionStyle = .none
-        self.contentView.backgroundColor = UIColor.Background.grey
+        self.backgroundColor = .clear
         
         self.contentView.addSubview(self.bannerImageView)
         self.contentView.addSubview(self.containerView)

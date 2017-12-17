@@ -39,6 +39,7 @@ class SingleResumeAboutCell : UITableViewCell {
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
         lbl.lineBreakMode = .byTruncatingTail
+        lbl.textColor = UIColor.Text.darkGrey
         lbl.text = "Description"
         
         return lbl
@@ -47,9 +48,10 @@ class SingleResumeAboutCell : UITableViewCell {
     
     lazy var titleLabel : UILabel = {
         let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.semibold)
+        lbl.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.medium)
         lbl.textAlignment = .left
         lbl.numberOfLines = 1
+        lbl.textColor = UIColor.Text.darkGrey
         lbl.text = "About"
         return lbl
     }()
@@ -60,10 +62,7 @@ class SingleResumeAboutCell : UITableViewCell {
         btn.titleLabel?.textAlignment = .center
         btn.setTitle("Read More", for: .normal)
         btn.setTitleColor(UIColor.Button.blue, for: .normal)
-        
         btn.addTopBorder(with: UIColor.Border.around, width: 1.0)
-
-        
         return btn
     }()
     
