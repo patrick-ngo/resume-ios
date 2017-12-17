@@ -137,18 +137,17 @@ class SingleResumeHeaderCell : UITableViewCell {
             make.left.right.equalTo(0)
             make.height.equalTo(100)
             make.top.equalTo(0)
-//            make.bottom.equalTo(self.containerView.snp.top)
         }
         
         self.containerView.snp.makeConstraints { (make) in
             make.top.equalTo(self.bannerImageView.snp.bottom).offset(-5)
-            make.left.equalTo(8)
-            make.right.equalTo(-8)
-            make.bottom.equalTo(-10)
+            make.left.equalTo(6)
+            make.right.equalTo(-6)
+            make.bottom.equalTo(-6)
         }
         
         self.avatarImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(0).offset(30)
+            make.top.equalTo(0).offset(20)
             make.height.width.equalTo(100)
             make.centerX.equalTo(self.contentView.snp.centerX)
         }
