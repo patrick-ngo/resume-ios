@@ -11,6 +11,17 @@ import UIKit
 
 class SingleResumeSectionHeaderView: UITableViewHeaderFooterView {
     
+    let containerView : UIView = {
+        let v = UIView()
+        v.backgroundColor = .white
+        
+        //only round 2 top corners
+        v.layer.cornerRadius = 2
+        v.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        return v
+    }()
+    
     lazy var titleLabel : UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.medium)
@@ -29,14 +40,20 @@ class SingleResumeSectionHeaderView: UITableViewHeaderFooterView {
     public override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier:reuseIdentifier)
         
-        self.contentView.backgroundColor = UIColor.Background.grey
+        self.backgroundColor = .clear
         
-        self.contentView.addSubview(self.titleLabel)
+        self.contentView.addSubview(self.containerView)
+        self.containerView.addSubview(self.titleLabel)
+        
+        self.containerView.snp.makeConstraints { (make) in
+            make.edges.equalTo(0).inset(UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 6))
+        }
         
         self.titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(21)
+            make.left.equalTo(15)
             make.right.equalTo(-10)
-            make.bottom.top.equalTo(0)
+            make.bottom.equalTo(0)
+            make.top.equalTo(5)
         }
     }
     

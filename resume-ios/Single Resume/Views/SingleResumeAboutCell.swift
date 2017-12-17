@@ -35,7 +35,7 @@ class SingleResumeAboutCell : UITableViewCell {
     let descriptionLabel : UILabel = {
         let lbl = UILabel()
         
-        lbl.font = UIFont.systemFont(ofSize: 13, weight: UIFont.Weight.light)
+        lbl.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.light)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
         lbl.lineBreakMode = .byTruncatingTail
