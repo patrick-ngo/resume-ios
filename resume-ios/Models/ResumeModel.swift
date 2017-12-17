@@ -21,6 +21,12 @@ struct ResumeModel: Decodable {
     let location: String?
     let summary: String?
     
+    let email: String?
+    let contactNumber: String?
+    let githubUrl: String?
+    let linkedInUrl: String?
+    let facebookUrl: String?
+    
     let jobs: [JobModel]?
 }
 

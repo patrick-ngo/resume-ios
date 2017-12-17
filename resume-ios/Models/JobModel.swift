@@ -15,6 +15,8 @@ struct JobModel: Decodable {
     let company: String?
     let start: String?
     let end:String?
+    let period:String?
+    let imageUrl: String?
     
     let location: String?
     let description: String?
