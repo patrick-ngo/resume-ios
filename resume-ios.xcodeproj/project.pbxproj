@@ -19,6 +19,7 @@
 		B91DA0EA1FE609A20067806E /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0E91FE609A20067806E /* UIView+Border.swift */; };
 		B91DA0EC1FE60AF70067806E /* CAGradientLayer+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0EB1FE60AF70067806E /* CAGradientLayer+Image.swift */; };
 		B91DA0EE1FE60B260067806E /* UINavigationBar+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0ED1FE60B260067806E /* UINavigationBar+Gradient.swift */; };
+		B91DA0F01FE626BC0067806E /* SingleResumeSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0EF1FE626BC0067806E /* SingleResumeSectionHeaderView.swift */; };
 		B98F5FEB1FE57F2F003F37B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F5FEA1FE57F2F003F37B4 /* AppDelegate.swift */; };
 		B98F5FED1FE57F2F003F37B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F5FEC1FE57F2F003F37B4 /* ViewController.swift */; };
 		B98F5FF21FE57F2F003F37B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B98F5FF11FE57F2F003F37B4 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		B91DA0E91FE609A20067806E /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		B91DA0EB1FE60AF70067806E /* CAGradientLayer+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Image.swift"; sourceTree = "<group>"; };
 		B91DA0ED1FE60B260067806E /* UINavigationBar+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Gradient.swift"; sourceTree = "<group>"; };
+		B91DA0EF1FE626BC0067806E /* SingleResumeSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleResumeSectionHeaderView.swift; sourceTree = "<group>"; };
 		B98F5FE71FE57F2F003F37B4 /* resume-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "resume-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98F5FEA1FE57F2F003F37B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B98F5FEC1FE57F2F003F37B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				B91DA0D91FE58D840067806E /* SingleResumeHeaderCell.swift */,
 				B91DA0DB1FE599220067806E /* SingleResumeAboutCell.swift */,
+				B91DA0EF1FE626BC0067806E /* SingleResumeSectionHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				B98F5FED1FE57F2F003F37B4 /* ViewController.swift in Sources */,
 				B91DA0E81FE608E60067806E /* UIColor+Hex.swift in Sources */,
 				B91DA0D71FE5873C0067806E /* SingleResumeVC.swift in Sources */,
+				B91DA0F01FE626BC0067806E /* SingleResumeSectionHeaderView.swift in Sources */,
 				B91DA0DC1FE599220067806E /* SingleResumeAboutCell.swift in Sources */,
 				B98F5FEB1FE57F2F003F37B4 /* AppDelegate.swift in Sources */,
 				B91DA0DA1FE58D840067806E /* SingleResumeHeaderCell.swift in Sources */,

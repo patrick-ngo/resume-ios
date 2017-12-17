@@ -54,6 +54,8 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tv.register(SingleResumeAboutCell.self, forCellReuseIdentifier: String(describing: SingleResumeAboutCell.self))
         tv.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         
+        tv.register(SingleResumeSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: String(describing: SingleResumeSectionHeaderView.self))
+        
         return tv
     }()
     
@@ -199,6 +201,19 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case Section.experience.rawValue:
+            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing:SingleResumeSectionHeaderView.self)) as! SingleResumeSectionHeaderView
+            headerView.titleLabel.text = Section.experience.name()
+            return headerView
+            
+        default:
+            return UIView(frame: CGRect.zero)
+        }
+    }
+    
+    
     //MARK: - TableView Delegate -
     
     
@@ -208,6 +223,16 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //do nothing
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case Section.experience.rawValue:
+            return 34
+            
+        default:
+            return 0
+        }
     }
     
     
