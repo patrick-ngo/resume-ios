@@ -22,6 +22,15 @@ class SingleResumeAboutCell : UITableViewCell {
         }
     }
     
+    let containerView : UIView = {
+        let v = UIView()
+        v.backgroundColor = .white
+        
+        v.clipsToBounds = true
+        v.layer.cornerRadius = 2
+        return v
+    }()
+    
     
     let descriptionLabel : UILabel = {
         let lbl = UILabel()
@@ -50,9 +59,9 @@ class SingleResumeAboutCell : UITableViewCell {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         btn.titleLabel?.textAlignment = .center
         btn.setTitle("Read More", for: .normal)
-        btn.setTitleColor(.black, for: .normal)
+        btn.setTitleColor(UIColor.Button.blue, for: .normal)
         
-        btn.backgroundColor = UIColor.cyan
+        btn.addTopBorder(with: UIColor.Border.around, width: 1.0)
 
         
         return btn
@@ -67,11 +76,17 @@ class SingleResumeAboutCell : UITableViewCell {
         super.init(style:style, reuseIdentifier:reuseIdentifier)
         
         self.selectionStyle = .none
-        self.contentView.backgroundColor = UIColor.white
+        self.contentView.backgroundColor = UIColor.clear
+        self.backgroundColor = .clear
         
-        self.contentView.addSubview(self.titleLabel)
-        self.contentView.addSubview(self.descriptionLabel)
-        self.contentView.addSubview(self.readMoreButton)
+        self.contentView.addSubview(self.containerView)
+        self.containerView.addSubview(self.titleLabel)
+        self.containerView.addSubview(self.descriptionLabel)
+        self.containerView.addSubview(self.readMoreButton)
+        
+        self.containerView.snp.makeConstraints { (make) in
+            make.edges.equalTo(0).inset(UIEdgeInsetsMake(0, 6, 6, 6))
+        }
         
         
         self.titleLabel.snp.makeConstraints { (make) in

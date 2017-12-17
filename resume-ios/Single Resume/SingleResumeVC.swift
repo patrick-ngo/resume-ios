@@ -44,6 +44,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let tv = UITableView(frame: CGRect.zero, style: .plain)
         tv.separatorStyle = .none
+        tv.backgroundColor = UIColor.Background.grey
         
         tv.delegate = self
         tv.dataSource = self
@@ -80,7 +81,8 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let navBar = self.navigationController?.navigationBar else { return }
         
         navBar.tintColor = UIColor.white
-        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
+        navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.Text.darkGrey]
+        navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.Text.darkGrey]
         
         self.navigationItem.title = "Patrick Ngo" //TODO: fetch name from api
         
