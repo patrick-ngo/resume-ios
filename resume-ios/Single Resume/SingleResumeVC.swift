@@ -42,9 +42,10 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private lazy var tableView : UITableView = {
         
-        let tv = UITableView(frame: CGRect.zero, style: .plain)
+        let tv = UITableView(frame: CGRect.zero, style: .grouped)
         tv.separatorStyle = .none
         tv.backgroundColor = UIColor.Background.grey
+        tv.sectionFooterHeight = 0
         
         tv.delegate = self
         tv.dataSource = self
@@ -53,8 +54,8 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         tv.register(SingleResumeHeaderCell.self, forCellReuseIdentifier: String(describing: SingleResumeHeaderCell.self))
         tv.register(SingleResumeAboutCell.self, forCellReuseIdentifier: String(describing: SingleResumeAboutCell.self))
         tv.register(SingleResumeContactCell.self, forCellReuseIdentifier: String(describing: SingleResumeContactCell.self))
-        tv.register(SingleResumeJobCellCell.self, forCellReuseIdentifier: String(describing: SingleResumeJobCellCell.self))
-        
+        tv.register(SingleResumeEducationCell.self, forCellReuseIdentifier: String(describing: SingleResumeEducationCell.self))
+        tv.register(SingleResumeJobCell.self, forCellReuseIdentifier: String(describing: SingleResumeJobCell.self))
         tv.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         
         tv.register(SingleResumeSectionHeaderView.self, forHeaderFooterViewReuseIdentifier: String(describing: SingleResumeSectionHeaderView.self))
@@ -170,7 +171,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             return 0
             
         case Section.education.rawValue:
-            return 0
+            return 1
             
         default:
             return 0
@@ -200,19 +201,17 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         case Section.experience.rawValue:
             
-            let jobCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeJobCellCell.self)) as! SingleResumeJobCellCell
+            let jobCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeJobCell.self)) as! SingleResumeJobCell
             
             if let jobs = self.resume?.jobs {
                 jobCell.job = jobs[indexPath.row]
             }
             return jobCell
             
-        case Section.education.rawValue,
-             Section.contact.rawValue:
-            
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))
-            cell?.textLabel?.text = "cell"
-            return cell!
+        case Section.education.rawValue:
+            let educationCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeEducationCell.self)) as! SingleResumeEducationCell
+            educationCell.populate()
+            return educationCell
             
         default:
             return UITableViewCell()
@@ -225,6 +224,11 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         case Section.experience.rawValue:
             let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing:SingleResumeSectionHeaderView.self)) as! SingleResumeSectionHeaderView
             headerView.titleLabel.text = Section.experience.name()
+            return headerView
+            
+        case Section.education.rawValue:
+            let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: String(describing:SingleResumeSectionHeaderView.self)) as! SingleResumeSectionHeaderView
+            headerView.titleLabel.text = Section.education.name()
             return headerView
             
         default:
@@ -246,8 +250,9 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
-        case Section.experience.rawValue:
-            return 25
+        case Section.experience.rawValue,
+             Section.education.rawValue:
+            return 30
             
         default:
             return 0

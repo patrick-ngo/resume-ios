@@ -84,19 +84,18 @@ class SingleResumeAboutCell : UITableViewCell {
         self.containerView.addSubview(self.readMoreButton)
         
         self.containerView.snp.makeConstraints { (make) in
-            make.edges.equalTo(0).inset(UIEdgeInsetsMake(0, 6, 6, 6))
+            make.edges.equalTo(0).inset(UIEdgeInsetsMake(0, 6, 0, 6))
         }
         
-        
         self.titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(0).offset(15)
+            make.left.equalTo(0).offset(12)
             make.right.equalTo(0).offset(-15)
             make.top.equalTo(0).offset(5)
             make.height.equalTo(35)
         }
         
         self.descriptionLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(0).offset(15)
+            make.left.equalTo(0).offset(12)
             make.right.equalTo(0).offset(-15)
             make.top.equalTo(self.titleLabel.snp.bottom)
         }

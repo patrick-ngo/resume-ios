@@ -20,18 +20,25 @@ class SingleResumeContactCell : UITableViewCell {
         return v
     }()
     
-    let descriptionLabel : UITextView = {
-        let lbl = UITextView()
-        lbl.isScrollEnabled = false
-        lbl.isEditable = false
-        lbl.font = UIFont.systemFont(ofSize: 12)
-        lbl.textColor = UIColor.Text.altGrey
-        lbl.textAlignment = .left
-        lbl.dataDetectorTypes = .all
-        lbl.textContainer.maximumNumberOfLines = 4
-        lbl.textContainer.lineBreakMode = .byTruncatingTail
-        lbl.tintColor = UIColor.Button.lightBlue
-        lbl.text =  """
+    let descriptionTextView : UITextView = {
+        let tv = UITextView()
+        tv.isScrollEnabled = false
+        tv.isEditable = false
+        
+        tv.font = UIFont.systemFont(ofSize: 12)
+        tv.textColor = UIColor.Text.altGrey
+        tv.textAlignment = .left
+        tv.tintColor = UIColor.Button.lightBlue
+        
+        //enable detectors (url, phone number, etc)
+        tv.dataDetectorTypes = .all
+        
+        tv.textContainer.maximumNumberOfLines = 4
+        tv.textContainer.lineBreakMode = .byTruncatingTail
+//        tv.textContainerInset = UIEdgeInsets.zero
+        tv.textContainer.lineFragmentPadding = 0
+        
+        tv.text =  """
                     LinkedIn:       linkedin.com/in/patngo/
                     GitHub:         github.com/sauceypan
                     Email:            patrick.ngo@hotmail.com
@@ -39,7 +46,7 @@ class SingleResumeContactCell : UITableViewCell {
                     """
         
         
-        return lbl
+        return tv
     }()
     
     
@@ -107,7 +114,7 @@ class SingleResumeContactCell : UITableViewCell {
         self.contentView.addSubview(self.containerView)
         
         self.containerView.addSubview(self.titleLabel)
-        self.containerView.addSubview(self.descriptionLabel)
+        self.containerView.addSubview(self.descriptionTextView)
         self.containerView.addSubview(self.emailButton)
         self.containerView.addSubview(self.phoneButton)
         
@@ -116,20 +123,20 @@ class SingleResumeContactCell : UITableViewCell {
         }
         
         self.titleLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(0).offset(15)
+            make.left.equalTo(0).offset(12)
             make.right.equalTo(0).offset(-6)
             make.top.equalTo(self.contentView).offset(5)
             make.height.equalTo(35)
         }
         
-        self.descriptionLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(0).offset(15)
+        self.descriptionTextView.snp.makeConstraints { (make) in
+            make.left.equalTo(0).offset(12)
             make.right.equalTo(0).offset(-6)
             make.top.equalTo(self.titleLabel.snp.bottom)
         }
         
         self.emailButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.descriptionLabel.snp.bottom).offset(10)
+            make.top.equalTo(self.descriptionTextView.snp.bottom).offset(10)
             make.bottom.equalTo(0)
             make.right.equalTo(self.contentView.snp.centerX).offset(1)
             make.left.equalTo(0)

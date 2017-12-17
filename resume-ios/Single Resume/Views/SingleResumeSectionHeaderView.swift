@@ -46,14 +46,14 @@ class SingleResumeSectionHeaderView: UITableViewHeaderFooterView {
         self.containerView.addSubview(self.titleLabel)
         
         self.containerView.snp.makeConstraints { (make) in
-            make.edges.equalTo(0).inset(UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 6))
+            make.edges.equalTo(0).inset(UIEdgeInsets(top: 6, left: 6, bottom: 0, right: 6))
         }
         
         self.titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(15)
             make.right.equalTo(-10)
             make.bottom.equalTo(0)
-            make.top.equalTo(5)
+            make.top.equalTo(10)
         }
     }
     

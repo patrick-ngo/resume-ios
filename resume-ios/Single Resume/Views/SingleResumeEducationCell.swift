@@ -1,5 +1,5 @@
 //
-//  SingleResumeJobCell.swift
+//  SingleResumeEducationCell.swift
 //  resume-ios
 //
 //  Created by Patrick Ngo on 2017-12-17.
@@ -9,40 +9,15 @@
 import Foundation
 import UIKit
 
-class SingleResumeJobCell: UITableViewCell {
+
+class SingleResumeEducationCell: UITableViewCell {
     
-    var job:JobModel? {
-        didSet {
-            if let job = self.job {
-                
-                if let imageUrl = job.imageUrl {
-                    self.companyImageView.sd_setImage(with: URL(string: imageUrl))
-                }
-                
-                if let title = job.title {
-                    self.titleLabel.text = title
-                }
-                
-                if let company = job.company {
-                    self.companyLabel.text = company
-                }
-                
-//                if let start = job.start {
-//                    self.periodLabel.text = start
-//                }
-//
-//                if let end = job.end {
-//                    self.periodLabel.text = self.periodLabel.text! + " - \(end)"
-//                }
-                
-                if let period = job.period {
-                    self.periodLabel.text = period
-                }
-            }
-        }
+    func populate() {
+        self.schoolLabel.text = "Concordia University"
+        self.degreeLabel.text = "Bachelor of Computer Engineering"
+        self.periodLabel.text = "2006 - 2011"
     }
     
-
     //MARK: - Views -
     
     let containerView: UIView = {
@@ -51,7 +26,7 @@ class SingleResumeJobCell: UITableViewCell {
         return v
     }()
     
-    let companyImageView: UIImageView = {
+    let schoolImageView: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
         iv.contentMode = .scaleAspectFill
@@ -60,14 +35,14 @@ class SingleResumeJobCell: UITableViewCell {
         return iv
     }()
     
-    let titleLabel: UILabel = {
+    let schoolLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = UIColor.Text.darkGrey
-        lbl.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        lbl.font = UIFont.systemFont(ofSize: 13)
         return lbl
     }()
     
-    let companyLabel: UILabel = {
+    let degreeLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = UIColor.Text.altGrey
         lbl.font = UIFont.systemFont(ofSize: 12)
@@ -94,9 +69,9 @@ class SingleResumeJobCell: UITableViewCell {
         
         self.backgroundColor = UIColor.Background.grey
         
-        self.containerView.addSubview(self.companyImageView)
-        self.containerView.addSubview(self.titleLabel)
-        self.containerView.addSubview(self.companyLabel)
+        self.containerView.addSubview(self.schoolImageView)
+        self.containerView.addSubview(self.schoolLabel)
+        self.containerView.addSubview(self.degreeLabel)
         self.containerView.addSubview(self.periodLabel)
         
         self.contentView.addSubview(containerView)
@@ -106,7 +81,7 @@ class SingleResumeJobCell: UITableViewCell {
         }
         
         
-        self.companyImageView.snp.makeConstraints { (make) in
+        self.schoolImageView.snp.makeConstraints { (make) in
             make.left.equalTo(10)
             make.centerY.equalTo(self.contentView)
             make.width.equalTo(80)
@@ -114,21 +89,21 @@ class SingleResumeJobCell: UITableViewCell {
             make.bottom.equalTo(-5)
         }
         
-        self.titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(self.companyImageView).offset(5)
-            make.left.equalTo(self.companyImageView.snp.right).offset(10)
+        self.schoolLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(self.schoolImageView).offset(5)
+            make.left.equalTo(self.schoolImageView.snp.right).offset(10)
             make.right.equalTo(self.contentView).offset(-10)
         }
         
-        self.companyLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.titleLabel)
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(3)
+        self.degreeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.schoolLabel)
+            make.top.equalTo(self.schoolLabel.snp.bottom).offset(3)
             make.right.equalTo(self.contentView).offset(-10)
         }
         
         self.periodLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.titleLabel)
-            make.top.equalTo(self.companyLabel.snp.bottom).offset(3)
+            make.left.equalTo(self.schoolLabel)
+            make.top.equalTo(self.degreeLabel.snp.bottom).offset(3)
             make.right.equalTo(self.contentView).offset(-10)
         }
         
@@ -140,3 +115,4 @@ class SingleResumeJobCell: UITableViewCell {
     }
     
 }
+
