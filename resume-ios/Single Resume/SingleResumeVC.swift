@@ -89,9 +89,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         navBar.tintColor = UIColor.white
         navBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.Text.darkGrey]
         navBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.Text.darkGrey]
-        
-        self.navigationItem.title = "Patrick Ngo" //TODO: fetch name from api
-        
+
         if #available(iOS 11.0, *) {
             navBar.prefersLargeTitles = true
         } else {
@@ -125,6 +123,11 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                     let resumeResponse = try JSONDecoder().decode(ResumeModel.self, from: result)
                     
                     self.resume = resumeResponse
+                    
+                    //update name in nav bar
+                    if let name = self.resume?.name {
+                        self.navigationItem.title = name
+                    }
                     
                     //reload table
                     self.tableView.reloadData()
