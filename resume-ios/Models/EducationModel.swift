@@ -15,6 +15,7 @@ struct EducationModel: Decodable {
     //basic info
     let title: String?
     let school: String?
+    let degree: String?
     let start: String?
     let end:String?
     let period:String?

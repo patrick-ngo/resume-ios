@@ -12,10 +12,35 @@ import UIKit
 
 class SingleResumeEducationCell: UITableViewCell {
     
-    func populate() {
-        self.schoolLabel.text = "Concordia University"
-        self.degreeLabel.text = "Bachelor of Computer Engineering"
-        self.periodLabel.text = "2006 - 2011"
+    var education:EducationModel? {
+        didSet {
+            if let education = self.education {
+                
+                if let imageUrl = education.imageUrl {
+                    self.schoolImageView.sd_setImage(with: URL(string: imageUrl))
+                }
+
+                if let school = education.school {
+                    self.schoolLabel.text = school
+                }
+                
+                if let degree = education.degree {
+                    self.degreeLabel.text = degree
+                }
+                
+                if let major = education.title {
+                    self.degreeLabel.text = self.degreeLabel.text! + ", \(major)"
+                }
+                
+                if let start = education.start {
+                    self.periodLabel.text = start
+                }
+                
+                if let end = education.end {
+                    self.periodLabel.text = self.periodLabel.text! + " - \(end)"
+                }
+            }
+        }
     }
     
     //MARK: - Views -
@@ -29,7 +54,7 @@ class SingleResumeEducationCell: UITableViewCell {
     let schoolImageView: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.layer.cornerRadius = 2
         
         return iv
@@ -38,7 +63,7 @@ class SingleResumeEducationCell: UITableViewCell {
     let schoolLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = UIColor.Text.darkGrey
-        lbl.font = UIFont.systemFont(ofSize: 13)
+        lbl.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         return lbl
     }()
     
@@ -82,11 +107,12 @@ class SingleResumeEducationCell: UITableViewCell {
         
         
         self.schoolImageView.snp.makeConstraints { (make) in
-            make.left.equalTo(10)
+            make.top.equalTo(0).offset(10)
+            make.left.equalTo(15)
             make.centerY.equalTo(self.contentView)
-            make.width.equalTo(80)
-            make.height.equalTo(65)
-            make.bottom.equalTo(-5)
+            make.width.equalTo(60)
+            make.height.equalTo(60)
+            make.bottom.equalTo(-10)
         }
         
         self.schoolLabel.snp.makeConstraints { (make) in
