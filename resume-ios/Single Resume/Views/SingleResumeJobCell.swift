@@ -27,16 +27,16 @@ class SingleResumeJobCell: UITableViewCell {
                     self.companyLabel.text = company
                 }
                 
-//                if let start = job.start {
-//                    self.periodLabel.text = start
-//                }
-//
-//                if let end = job.end {
-//                    self.periodLabel.text = self.periodLabel.text! + " - \(end)"
-//                }
+                if let start = job.start {
+                    self.periodLabel.text = start
+                }
+
+                if let end = job.end {
+                    self.periodLabel.text = self.periodLabel.text! + " - \(end)"
+                }
                 
                 if let period = job.period {
-                    self.periodLabel.text = period
+                    self.periodLabel.text = self.periodLabel.text! + " - \(period)"
                 }
             }
         }
@@ -54,7 +54,7 @@ class SingleResumeJobCell: UITableViewCell {
     let companyImageView: UIImageView = {
         let iv = UIImageView()
         iv.clipsToBounds = true
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.layer.cornerRadius = 2
         
         return iv
@@ -107,11 +107,12 @@ class SingleResumeJobCell: UITableViewCell {
         
         
         self.companyImageView.snp.makeConstraints { (make) in
-            make.left.equalTo(10)
+            make.top.equalTo(0).offset(10)
+            make.left.equalTo(15)
             make.centerY.equalTo(self.contentView)
-            make.width.equalTo(80)
-            make.height.equalTo(65)
-            make.bottom.equalTo(-5)
+            make.width.equalTo(60)
+            make.height.equalTo(60)
+            make.bottom.equalTo(-10)
         }
         
         self.titleLabel.snp.makeConstraints { (make) in
