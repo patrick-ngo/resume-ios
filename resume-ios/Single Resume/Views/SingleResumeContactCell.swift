@@ -11,6 +11,17 @@ import UIKit
 
 class SingleResumeContactCell : UITableViewCell {
     
+    var resume: ResumeModel? {
+        didSet {
+            if let resume = self.resume {
+                
+                if let contactSummary = resume.contactSummary {
+                    descriptionTextView.text = contactSummary
+                }
+            }
+        }
+    }
+    
     let containerView : UIView = {
         let v = UIView()
         v.backgroundColor = .white
@@ -35,16 +46,8 @@ class SingleResumeContactCell : UITableViewCell {
         
         tv.textContainer.maximumNumberOfLines = 4
         tv.textContainer.lineBreakMode = .byTruncatingTail
-//        tv.textContainerInset = UIEdgeInsets.zero
+        tv.textContainerInset = UIEdgeInsets.zero
         tv.textContainer.lineFragmentPadding = 0
-        
-        tv.text =  """
-                    LinkedIn:       linkedin.com/in/patngo/
-                    GitHub:         github.com/sauceypan
-                    Email:            patrick.ngo@hotmail.com
-                    Mobile:         +6582209567
-                    """
-        
         
         return tv
     }()
@@ -130,7 +133,7 @@ class SingleResumeContactCell : UITableViewCell {
         }
         
         self.descriptionTextView.snp.makeConstraints { (make) in
-            make.left.equalTo(0).offset(12)
+            make.left.equalTo(0).offset(14)
             make.right.equalTo(0).offset(-6)
             make.top.equalTo(self.titleLabel.snp.bottom)
         }

@@ -197,6 +197,7 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         case Section.contact.rawValue:
             
             let contactCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeContactCell.self)) as! SingleResumeContactCell
+            contactCell.resume = self.resume
             return contactCell
         
         case Section.experience.rawValue:
@@ -210,7 +211,10 @@ class SingleResumeVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         case Section.education.rawValue:
             let educationCell = self.tableView.dequeueReusableCell(withIdentifier: String(describing: SingleResumeEducationCell.self)) as! SingleResumeEducationCell
-            educationCell.populate()
+            
+            if let educations = self.resume?.educations {
+                educationCell.education = educations[indexPath.row]
+            }
             return educationCell
             
         default:
