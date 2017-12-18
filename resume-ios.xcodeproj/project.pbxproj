@@ -25,7 +25,6 @@
 		B91DA0F61FE691AE0067806E /* SingleResumeEducationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0F51FE691AE0067806E /* SingleResumeEducationCell.swift */; };
 		B91DA0F81FE6AFEC0067806E /* EducationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA0F71FE6AFEC0067806E /* EducationModel.swift */; };
 		B98F5FEB1FE57F2F003F37B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F5FEA1FE57F2F003F37B4 /* AppDelegate.swift */; };
-		B98F5FED1FE57F2F003F37B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F5FEC1FE57F2F003F37B4 /* ViewController.swift */; };
 		B98F5FF21FE57F2F003F37B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B98F5FF11FE57F2F003F37B4 /* Assets.xcassets */; };
 		B98F5FF51FE57F2F003F37B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B98F5FF31FE57F2F003F37B4 /* LaunchScreen.storyboard */; };
 		B98F60001FE57F2F003F37B4 /* resume_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F5FFF1FE57F2F003F37B4 /* resume_iosTests.swift */; };
@@ -75,7 +74,6 @@
 		B91DA0F71FE6AFEC0067806E /* EducationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationModel.swift; sourceTree = "<group>"; };
 		B98F5FE71FE57F2F003F37B4 /* resume-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "resume-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98F5FEA1FE57F2F003F37B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B98F5FEC1FE57F2F003F37B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B98F5FF11FE57F2F003F37B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B98F5FF41FE57F2F003F37B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B98F5FF61FE57F2F003F37B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				B98F5FEA1FE57F2F003F37B4 /* AppDelegate.swift */,
-				B98F5FEC1FE57F2F003F37B4 /* ViewController.swift */,
 				B98F5FF11FE57F2F003F37B4 /* Assets.xcassets */,
 				B98F5FF31FE57F2F003F37B4 /* LaunchScreen.storyboard */,
 				B98F5FF61FE57F2F003F37B4 /* Info.plist */,
@@ -565,7 +562,6 @@
 				B91DA0EC1FE60AF70067806E /* CAGradientLayer+Image.swift in Sources */,
 				B91DA0E41FE5A23A0067806E /* ResumesAPI.swift in Sources */,
 				B91DA0F61FE691AE0067806E /* SingleResumeEducationCell.swift in Sources */,
-				B98F5FED1FE57F2F003F37B4 /* ViewController.swift in Sources */,
 				B91DA0E81FE608E60067806E /* UIColor+Hex.swift in Sources */,
 				B91DA0D71FE5873C0067806E /* SingleResumeVC.swift in Sources */,
 				B91DA0F81FE6AFEC0067806E /* EducationModel.swift in Sources */,
