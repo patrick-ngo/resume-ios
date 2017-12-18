@@ -40,7 +40,6 @@ class SingleResumeAboutCell : UITableViewCell {
         lbl.numberOfLines = 0
         lbl.lineBreakMode = .byTruncatingTail
         lbl.textColor = UIColor.Text.darkGrey
-        lbl.text = "Description"
         
         return lbl
     }()
@@ -61,7 +60,7 @@ class SingleResumeAboutCell : UITableViewCell {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         btn.titleLabel?.textAlignment = .center
         btn.setTitle("Read More", for: .normal)
-        btn.setTitleColor(UIColor.Button.blue, for: .normal)
+        btn.setTitleColor(UIColor.Button.lightBlue, for: .normal)
         btn.addTopBorder(with: UIColor.Border.around, width: 1.0)
         return btn
     }()

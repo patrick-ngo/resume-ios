@@ -48,7 +48,7 @@ class SingleResumeHeaderCell : UITableViewCell {
     
     let bannerImageView : UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .blue
+        iv.backgroundColor = .white
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         return iv
@@ -59,7 +59,6 @@ class SingleResumeHeaderCell : UITableViewCell {
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         iv.layer.cornerRadius = 50 //size 80
-        iv.backgroundColor = .green
         
         iv.layer.borderColor = UIColor.white.cgColor
         iv.layer.borderWidth = 3
@@ -80,7 +79,6 @@ class SingleResumeHeaderCell : UITableViewCell {
         lbl.textColor = UIColor.Text.darkGrey
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
-        lbl.text = "Name"
         return lbl
     }()
     
@@ -90,7 +88,6 @@ class SingleResumeHeaderCell : UITableViewCell {
         lbl.textColor = UIColor.Text.darkGrey
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
-        lbl.text = "Title"
         return lbl
     }()
     
@@ -100,7 +97,6 @@ class SingleResumeHeaderCell : UITableViewCell {
         lbl.textColor = UIColor.Text.darkGrey
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
-        lbl.text = "Education"
         return lbl
     }()
     
@@ -110,7 +106,6 @@ class SingleResumeHeaderCell : UITableViewCell {
         lbl.textColor = UIColor.Text.darkGrey
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
-        lbl.text = "Location"
         return lbl
     }()
     
